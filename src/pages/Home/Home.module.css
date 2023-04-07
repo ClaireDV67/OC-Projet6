@@ -1,0 +1,19 @@
+.div {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    bottom: 65%;
+    font-weight: 500;
+}
+
+@media (max-width: 650px) {
+    .div {
+        font-size: 1.7em;
+        bottom: 85%;
+        text-align: left;
+        margin-left: 20px;
+        width: 251px;
+        padding-right: 20px;
+    }
+}

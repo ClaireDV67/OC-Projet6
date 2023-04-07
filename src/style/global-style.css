@@ -1,0 +1,42 @@
+* {
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #FF6060;
+    margin: auto;
+    font-weight: 400;
+}
+
+#root {
+    margin: 40px 60px 0 60px;
+}
+
+li {
+    list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 650px) {
+    #root {
+        margin: 15px 15px 0 15px;
+    }
+}

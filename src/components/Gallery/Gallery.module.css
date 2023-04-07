@@ -1,0 +1,18 @@
+.gallery {
+    width: 100%;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 15px 0 15px 0;
+}
+
+@media (max-width: 650px) {
+    .gallery {
+        margin-bottom: 15px;
+        padding: 0;
+        background-color: inherit;
+    }
+}

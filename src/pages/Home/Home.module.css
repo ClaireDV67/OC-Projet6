@@ -1,16 +1,25 @@
+.main {
+    padding: 0 40px 40px 40px;
+}
+
 .div {
     color: white;
     font-size: 2em;
+    width: 100%;
     text-align: center;
-    position: relative;
-    bottom: 65%;
+    position: absolute;
+    bottom: 43%;
     font-weight: 500;
 }
 
 @media (max-width: 650px) {
+    .main {
+        padding: 15px 15px 40px 15px;
+    }
+
     .div {
         font-size: 1.7em;
-        bottom: 85%;
+        bottom: 23%;
         text-align: left;
         margin-left: 20px;
         width: 251px;

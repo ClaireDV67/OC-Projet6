@@ -6,7 +6,7 @@ function Card({ id, cover, title }) {
         <article className={styles.article}>
             <Link to={`/accomodation/${id}`}>
                 <img className={styles.img} src={cover} alt={title} title={title} />
-                <h3 className={styles.h3}>{title}</h3>
+                <h2 className={styles.h2}>{title}</h2>
             </Link>
         </article>
     )

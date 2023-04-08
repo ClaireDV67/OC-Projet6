@@ -1,18 +1,21 @@
 .gallery {
-    width: 100%;
     background-color: #F6F6F6;
     border-radius: 25px;
     margin-bottom: 40px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 15px 0 15px 0;
+    gap: 30px;
+    padding: 30px;
 }
 
 @media (max-width: 650px) {
     .gallery {
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 15px;
         padding: 0;
         background-color: inherit;
+        gap: 15px;
     }
 }

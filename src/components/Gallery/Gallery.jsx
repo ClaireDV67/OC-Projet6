@@ -1,6 +1,6 @@
 import styles from './Gallery.module.css'
 import Card from '../Card/Card'
-import datas from '../../datas/accomodations.json'
+import datas from '../../datas/accommodations.json'
 
 function Gallery() {
     return (

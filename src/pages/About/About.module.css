@@ -1,9 +1,4 @@
-.main {
-    padding: 0 40px 40px 40px;
-}
-
-@media (max-width: 650px) {
-    .main {
-        padding: 15px 15px 40px 15px;
-    }
+.section {
+    width: 80%;
+    margin: auto;
 }

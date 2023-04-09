@@ -1,6 +1,5 @@
 .main {
     text-align: center;
-    padding: 40px;
 }
 
 .error {
@@ -20,10 +19,6 @@
 }
 
 @media (max-width: 650px) {
-    .main {
-        padding: 15px 15px 40px 15px;
-    }
-
     .error {
         font-size: 7em;
     }

@@ -44,6 +44,12 @@
     align-items: center;
 }
 
+.nameHost {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
 .pictureHost {
     width: 64px;
     height: 64px;

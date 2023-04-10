@@ -14,9 +14,18 @@
     border-radius: 25px;
 }
 
+.slide[animation="0"] {
+    animation: changeSlide1 1200ms;
+}
+
+.slide[animation="1"] {
+    animation: changeSlide2 1200ms;
+}
+
 .arrow {
     color: white;
     position: absolute;
+    z-index: 50;
     cursor: pointer;
     padding: 50px;
     font-size: 6em;
@@ -43,5 +52,23 @@
     .arrow {
         padding: 30px;
         font-size: 3em;
+    }
+}
+
+@keyframes changeSlide1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes changeSlide2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

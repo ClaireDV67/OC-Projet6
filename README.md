@@ -8,7 +8,7 @@ Ils sont dans le métier de la location d’appartements entre particuliers depu
 Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end.
 Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !
 
-![Maquette](/src/assets/images/D_Fiche-Logement)
+![Maquette](/src/assets/images/D_Fiche-Logement.png)
 
 ## Objectif 
 

@@ -3,8 +3,9 @@
 }
 
 .error {
-    font-size: 14em;
+    font-size: 12em;
     font-weight: 700;
+    margin: 0;
 }
 
 .text {
@@ -18,7 +19,7 @@
     font-weight: 500;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 576px) {
     .error {
         font-size: 7em;
     }

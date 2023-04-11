@@ -3,13 +3,17 @@
     border-radius: 25px;
     margin-bottom: 40px;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
-    padding: 30px;
+    padding: 20px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 992px) {
+    .gallery {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 576px) {
     .gallery {
         flex-direction: column;
         align-items: center;

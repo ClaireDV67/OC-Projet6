@@ -18,16 +18,12 @@
     opacity: 0.7;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 576px) {
     .bannerHome {
         height: 111px;
     }
 
     .banner {
         border-radius: 10px;
-    }
-
-    .imgHome {
-        height: 111px;
     }
 }

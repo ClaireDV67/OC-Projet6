@@ -14,21 +14,19 @@
     border-radius: 25px;
 }
 
-.slide[animation="0"] {
-    animation: changeSlide1 1200ms;
-}
-
-.slide[animation="1"] {
-    animation: changeSlide2 1200ms;
-}
-
+/* Flèches */
 .arrow {
     color: white;
-    position: absolute;
-    z-index: 50;
     cursor: pointer;
     padding: 50px;
     font-size: 6em;
+}
+
+.button {
+    position: absolute;
+    z-index: 50;
+    border: none;
+    background-color: inherit;
 }
 
 .arrowLeft {
@@ -39,7 +37,16 @@
     right: 0;
 }
 
-@media (max-width: 650px) {
+/* Animations */
+.slide[animation="0"] {
+    animation: changeSlide1 1200ms;
+}
+
+.slide[animation="1"] {
+    animation: changeSlide2 1200ms;
+}
+
+@media (max-width: 576px) {
     .carousel {
         height: 255px;
     }

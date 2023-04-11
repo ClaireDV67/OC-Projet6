@@ -4,30 +4,13 @@
     overflow: hidden;
 }
 
-.collapse[animation="1"] > .containerText {
-    animation: open 600ms;
-}
-
-.collapse[animation="0"] > .containerText {
-    animation: close 600ms ease-in-out;
-}
-
-.icone[animation="1"] {
-    transform: rotate(-180deg);
-    transition: transform 600ms;
-}
-
-.icone[animation="0"] {
-    transform: rotate(0deg);
-    transition: transform 600ms;
-}
-
 .containerText {
     padding: 35px 30px 17px 30px;
     background-color: #F7F7F7;
     border-radius: 5px;
     position: relative;
     bottom: 5px;
+    height: 100%;
 }
 
 .button {
@@ -56,7 +39,26 @@
     font-size: 1.3em;
 }
 
-@media (max-width: 650px) {
+/* Animations */
+.collapse[animation="1"] > .containerText {
+    animation: open 600ms;
+}
+
+.collapse[animation="0"] > .containerText {
+    animation: close 600ms ease-in-out;
+}
+
+.icone[animation="1"] {
+    transform: rotate(-180deg);
+    transition: transform 600ms;
+}
+
+.icone[animation="0"] {
+    transform: rotate(0deg);
+    transition: transform 600ms;
+}
+
+@media (max-width: 576px) {
     .collapse {
         width: 100%;
         margin-bottom: 20px;

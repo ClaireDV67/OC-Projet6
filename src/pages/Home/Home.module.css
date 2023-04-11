@@ -8,7 +8,7 @@
     font-weight: 500;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 576px) {
     .div {
         font-size: 1.7em;
         bottom: 23%;

@@ -1,13 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import styles from './Accommodation.module.css'
-import Slideshow from '../../components/Slideshow/Slideshow'
-import datas from '../../datas/accommodations.json'
-import Collapse from '../../components/Collapse/Collapse'
+import { useParams, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import styles from "./Accommodation.module.css"
+import Slideshow from "../../components/Slideshow/Slideshow"
+import datas from "../../datas/accommodations.json"
+import Collapse from "../../components/Collapse/Collapse"
 
 function Accommodation() {
+  // Récupération de l'id dans les paramètres de l"URL
   const { id } = useParams()
   const navigate = useNavigate()
+  // Vérification de l'existence de données
   const [dataAccommodationOk, setDataAccommodationOk] = useState()
   const dataAccommodation = datas.find(data => data.id === id)
   useEffect(() => {
@@ -16,31 +18,33 @@ function Accommodation() {
       navigate("/error")
     }
   }, [dataAccommodation, navigate])
-
-  const nameArray = dataAccommodationOk &&  dataAccommodation.host.name.split(' ')
-  const name =  dataAccommodationOk && nameArray.map((word) => <span key={`${word}-${dataAccommodation}`}>{word}</span>)
-  const tags = dataAccommodationOk && dataAccommodation.tags
+  
   const equipments = dataAccommodationOk && dataAccommodation.equipments
+  // Création des tags
+  const tags = dataAccommodationOk && dataAccommodation.tags
+  const createTags = () => dataAccommodationOk && tags.map(tag => <span className={styles.tags} key={`${tag}-${dataAccommodation.id}`}>{tag}</span>)
+  // Séparation du nom de l'hôte en plusieurs parties
+  const nameArray = dataAccommodationOk &&  dataAccommodation.host.name.split(" ")
+  const name =  dataAccommodationOk && nameArray.map((word) => <span key={`${word}-${dataAccommodation}`}>{word}</span>)
+  // Transformation de la note en "étoiles"
   const stars =  dataAccommodationOk && [1, 2, 3, 4, 5]
-  const rating = () => dataAccommodationOk && stars.map((star) => Math.round(dataAccommodation.rating) >= star ? <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataAccommodation.id}`} className={styles.star + ' ' + styles.starNocolor + " fa-solid fa-star"}></i>)
+  const rating = () => dataAccommodationOk && stars.map((star) => Math.round(dataAccommodation.rating) >= star ? <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " " + styles.starNocolor + " fa-solid fa-star"}></i>)
 
 	return (
     dataAccommodationOk && (
-      <main className={styles.main}>
-        <section>
+      <main role="main" className={styles.main}>
+        <section aria-label="Carousel">
           <Slideshow
             pictures={dataAccommodation.pictures}
             title={dataAccommodation.title}
           />
         </section>
-        <section className={styles.introduction}>
+        <section aria-label="Informations principales" className={styles.introduction}>
           <div className={styles.mainIntroduction}>
             <h2 className={styles.h2}>{dataAccommodation.title}</h2>
             <div>{dataAccommodation.location}</div>
-            <div>
-              {tags.map(tag => {
-                  return (<span className={styles.tags} key={`${tag}-${dataAccommodation.id}`}>{tag}</span>)
-              })}
+            <div className={styles.tagsContainer}>
+              {createTags()}
             </div>
           </div>
           <div className={styles.hostInformations}>
@@ -53,7 +57,7 @@ function Accommodation() {
               </div>
           </div>
         </section>
-        <section className={styles.details}>
+        <section aria-label="Détails du logement" className={styles.details}>
               <Collapse
                 titleCollapse="Description"
                 textCollapse={dataAccommodation.description}

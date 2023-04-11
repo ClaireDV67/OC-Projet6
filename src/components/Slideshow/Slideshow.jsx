@@ -1,5 +1,5 @@
-import styles from './Slideshow.module.css'
-import { useState } from 'react';
+import styles from "./Slideshow.module.css"
+import { useState } from "react";
 
 function Slideshow( {pictures, title} ) {
     const [count, setCount] = useState(0);
@@ -33,13 +33,13 @@ function Slideshow( {pictures, title} ) {
 
     return pictures.length === 1 ? ( 
             <div className={styles.carousel}>
-                <img className={styles.slide} src={pictures[count]} alt={title} />
+                <img className={styles.slide} src={pictures[count]} alt={title} title={title} />
             </div>
         ) : (
         <div className={styles.carousel}>
-            <i className={styles.arrow + ' ' + styles.arrowLeft + ' fa-solid fa-chevron-left'} onClick={() => previousSlide()}></i>
-            <img className={styles.slide} animation={animation} src={pictures[count]} alt={title}/>
-            <i className={styles.arrow +  ' ' + styles.arrowRight + ' fa-solid fa-chevron-right'} onClick={() => nextSlide()}></i>
+            <button aria-label="Image précédente" className={styles.button + " " + styles.arrowLeft} onClick={() => previousSlide()}><i className={styles.arrow + " fa-solid fa-chevron-left"}></i></button>
+            <img className={styles.slide} animation={animation} src={pictures[count]} alt={title} title={title}/>
+            <button aria-label="Image suivante" className={styles.button +  " " + styles.arrowRight} onClick={() => nextSlide()}><i className={styles.arrow + " fa-solid fa-chevron-right"}></i></button>
         </div>
         )
 }

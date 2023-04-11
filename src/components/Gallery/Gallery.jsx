@@ -1,10 +1,10 @@
-import styles from './Gallery.module.css'
-import Card from '../Card/Card'
-import datas from '../../datas/accommodations.json'
+import styles from "./Gallery.module.css"
+import Card from "../Card/Card"
+import datas from "../../datas/accommodations.json"
 
 function Gallery() {
     return (
-        <section className={styles.gallery}>
+        <section aria-label="Galerie appartements" className={styles.gallery}>
             {datas.map(data => {
                 return (
                     <Card

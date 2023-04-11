@@ -6,6 +6,13 @@
     padding: 40px 60px 40px 60px;
 }
 
+/* Logo */
+.img {
+    width: 50%;
+    max-width: 211px;
+}
+
+/* Navigation */
 .ul {
     display: flex;
     justify-content: space-between;
@@ -21,12 +28,7 @@
     text-decoration: underline;
 }
 
-.img {
-    width: 50%;
-    max-width: 211px;
-}
-
-@media (max-width: 650px) {
+@media (max-width: 576px) {
     .header {
        padding: 15px;
     }

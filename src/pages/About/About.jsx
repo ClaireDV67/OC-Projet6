@@ -4,9 +4,10 @@ import styles from "./About.module.css"
 
 function About() {
   return (
-    <main>
+    <main role="main">
       <Banner />
       <section className={styles.section}>
+        <h2 className="visually-hidden">À propos</h2>
         <Collapse
           titleCollapse="Fiabilité"
           textCollapse="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."

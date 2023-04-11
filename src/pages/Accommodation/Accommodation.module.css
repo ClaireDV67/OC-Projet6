@@ -2,6 +2,7 @@
     font-weight: 500;
 }
 
+/* Section comportant le titre, le lieu, les tags, l'hôte, et la note */
 .introduction {
     display: flex;
     justify-content: space-between;
@@ -9,14 +10,16 @@
     margin-bottom: 30px;
 }
 
+/* Section comportant la description et les équipements */
 .details {
     display: flex;
     justify-content: space-between;
     gap: 50px;
 }
 
+/* Div contenant le titre, le lieu, et les tags */
 .mainIntroduction {
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,6 +32,11 @@
     font-size: 1.8em;
 }
 
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .tags {
     background-color: #FF6060;
     color: white;
@@ -36,9 +44,18 @@
     white-space: nowrap;
     padding: 5px 20px 5px 20px;
     margin-right: 10px;
+    margin-bottom: 5px;
     font-size: 0.8em;
 }
 
+/* Div contenant la photo et le nom de l'hôte, et sa note */
+.hostInformations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Div contenant la photo et le nom de l'hôte */
 .host {
     display: flex;
     align-items: center;
@@ -59,6 +76,11 @@
     margin-left: 10px;
 }
 
+/* Div contenant les étoiles de la note */
+.rating {
+    text-align: right;
+}
+
 .starNocolor {
     color: #E3E3E3;
 }
@@ -67,27 +89,21 @@
     margin-left: 5px;
 }
 
-.hostInformations {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.rating {
-    text-align: right;
-}
-
-@media (max-width: 650px) {
+@media (max-width: 576px) {
     .introduction {
         flex-direction: column;
         margin-top: 15px;
         margin-bottom: 20px;
     }
 
+    .mainIntroduction {
+        width: 100%;
+    }
+
     .hostInformations {
         flex-direction: row-reverse;
         align-items: center;
-        margin-top: 17px;
+        margin-top: 10px;
     }
 
     .pictureHost {

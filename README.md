@@ -1,4 +1,4 @@
-# P6-Kasa
+# Kasa
 
 Projet n°6 de la formation Developpeur Web OpenClassrooms
 ## Contexte

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import styles from "./Accommodation.module.css"
 import Slideshow from "../../components/Slideshow/Slideshow"
 import datas from "../../datas/accommodations.json"
@@ -9,29 +9,27 @@ function Accommodation() {
   // Récupération de l'id dans les paramètres de l"URL
   const { id } = useParams()
   const navigate = useNavigate()
-  // Vérification de l'existence de données
-  const [dataAccommodationOk, setDataAccommodationOk] = useState()
+  // Vérification de l'existence de données et redirection si ce n'est pas le cas
   const dataAccommodation = datas.find(data => data.id === id)
   useEffect(() => {
-    setDataAccommodationOk(dataAccommodation)
     if (dataAccommodation === undefined) {
       navigate("/error")
     }
-  }, [dataAccommodation, navigate])
+  }, [])
   
-  const equipments = dataAccommodationOk && dataAccommodation.equipments
+  const equipments = dataAccommodation && dataAccommodation.equipments
   // Création des tags
-  const tags = dataAccommodationOk && dataAccommodation.tags
-  const createTags = () => dataAccommodationOk && tags.map(tag => <span className={styles.tags} key={`${tag}-${dataAccommodation.id}`}>{tag}</span>)
+  const tags = dataAccommodation && dataAccommodation.tags
+  const createTags = () => dataAccommodation && tags.map(tag => <span className={styles.tags} key={`${tag}-${dataAccommodation.id}`}>{tag}</span>)
   // Séparation du nom de l'hôte en plusieurs parties
-  const nameArray = dataAccommodationOk &&  dataAccommodation.host.name.split(" ")
-  const name =  dataAccommodationOk && nameArray.map((word) => <span key={`${word}-${dataAccommodation}`}>{word}</span>)
+  const nameArray = dataAccommodation &&  dataAccommodation.host.name.split(" ")
+  const name =  dataAccommodation && nameArray.map((word, index) => <span key={`${word}-${index}-${dataAccommodation.id}`}>{word}</span>)
   // Transformation de la note en "étoiles"
-  const stars =  dataAccommodationOk && [1, 2, 3, 4, 5]
-  const rating = () => dataAccommodationOk && stars.map((star) => Math.round(dataAccommodation.rating) >= star ? <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " " + styles.starNocolor + " fa-solid fa-star"}></i>)
+  const stars =  dataAccommodation && [1, 2, 3, 4, 5]
+  const rating = () => dataAccommodation && stars.map((star) => Math.round(dataAccommodation.rating) >= star ? <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " " + styles.starNocolor + " fa-solid fa-star"}></i>)
 
 	return (
-    dataAccommodationOk && (
+   dataAccommodation && (
       <main role="main" className={styles.main}>
         <section aria-label="Carousel">
           <Slideshow

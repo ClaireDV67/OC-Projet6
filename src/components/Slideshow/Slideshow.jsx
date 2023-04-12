@@ -1,16 +1,11 @@
 import styles from "./Slideshow.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Slideshow( {pictures, title} ) {
     const [count, setCount] = useState(0);
     const [animation, setAnimation] = useState(0)
 
     const previousSlide = () => {
-        if (animation === 0 ) {
-            setAnimation(1)
-        } else {
-            setAnimation(0)
-        }
         if (count === 0) {
             setCount(pictures.length - 1)
         } else {
@@ -19,17 +14,20 @@ function Slideshow( {pictures, title} ) {
     }
 
     const nextSlide = () => {
-        if (animation === 0 ) {
-            setAnimation(1)
-        } else {
-            setAnimation(0)
-        }
         if (count === pictures.length - 1) {
             setCount(0)
         } else {
             setCount(count+1)
         }
     }
+
+    useEffect(() => {
+        if (animation === 0 ) {
+            setAnimation(1)
+        } else {
+            setAnimation(0)
+        }
+    }, [count])
 
     return pictures.length === 1 ? ( 
             <div className={styles.carousel}>

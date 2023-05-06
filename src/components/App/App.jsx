@@ -9,7 +9,7 @@ import '../../style/global-style.css'
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="/OC-Projet6">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

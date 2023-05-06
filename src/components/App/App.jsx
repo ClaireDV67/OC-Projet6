@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, BrowserRouter as Route, Routes } from 'react-router-dom'
 import Home from '../../pages/Home/Home'
 import Error from '../../pages/Error/Error'
 import Accommodation from '../../pages/Accommodation/Accommodation'
@@ -9,7 +9,7 @@ import '../../style/global-style.css'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   )
 }
 

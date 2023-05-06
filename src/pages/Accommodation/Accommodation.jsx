@@ -15,7 +15,7 @@ function Accommodation() {
     if (dataAccommodation === undefined) {
       navigate("/error")
     }
-  }, [])
+  }, [dataAccommodation])
   
   const equipments = dataAccommodation && dataAccommodation.equipments
   // Création des tags

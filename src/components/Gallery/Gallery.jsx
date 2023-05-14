@@ -1,20 +1,8 @@
 import styles from "./Gallery.module.css"
 import Card from "../Card/Card"
-import { useEffect, useState } from "react"
+import datas from "../../datas/accommodations.json"
 
 function Gallery() {
-    const [datas, setDatas] = useState([])
-    useEffect(() => {
-        fetch("/datas/accommodations.json", {
-            headers : { 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-             }})
-        .then(response => response.json())
-        .then(value => setDatas(value))
-        .catch(error => console.log(error))
-    }, [])
-
     return ( datas && datas.length>0 && (
         <section aria-label="Galerie appartements" className={styles.gallery}>
             {datas.map(data => {

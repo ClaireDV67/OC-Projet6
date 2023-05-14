@@ -1,9 +1,21 @@
 import styles from "./Gallery.module.css"
 import Card from "../Card/Card"
-import datas from "../../datas/accommodations.json"
+import { useEffect, useState } from "react"
 
 function Gallery() {
-    return (
+    const [datas, setDatas] = useState([])
+    useEffect(() => {
+        fetch("/datas/accommodations.json", {
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }})
+        .then(response => response.json())
+        .then(value => setDatas(value))
+        .catch(error => console.log(error))
+    }, [])
+
+    return ( datas && datas.length>0 && (
         <section aria-label="Galerie appartements" className={styles.gallery}>
             {datas.map(data => {
                 return (
@@ -16,7 +28,7 @@ function Gallery() {
                 )
             })}
         </section>
-    )
+    ))
 }
 
 export default Gallery
